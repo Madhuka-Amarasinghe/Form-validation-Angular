@@ -1,0 +1,52 @@
+<div class="my-form-body">
+  <h1>Sign Up Here</h1>
+<form class="my-form" [formGroup]="myForm" (ngSubmit)="myFormSubmit()">
+  <div>
+    <div>
+      <label>Name<span style="color: red;margin-left: .5vw">*</span></label><br>
+      <input formControlName="name" size="80" [ngClass]="{'is-invalid': submitted && myForm.controls.name.errors}">
+      <div class="validate-message" *ngIf="submitted && myForm.controls.name.errors">
+        Name is required.
+      </div>
+    </div>
+    <br>
+    <div>
+      <label>Email<span style="color: red;margin-left: .5vw">*</span></label><br>
+      <input formControlName="email" size="80" [ngClass]="{'is-invalid': submitted && myForm.controls.email.errors}">
+      <div class="validate-message" *ngIf="submitted && myForm.controls.email.errors">
+        Email is required.
+      </div>
+    </div>
+    <br>
+    <div>
+      <label>Address<span style="color: red;margin-left: .5vw">*</span></label><br>
+      <input formControlName="address" size="80" [ngClass]="{'is-invalid': submitted && myForm.controls.address.errors}">
+      <div class="validate-message" *ngIf="submitted && myForm.controls.address.errors">
+        Address is required.
+      </div>
+    </div>
+    <br>
+    <div>
+      <label>Password<span style="color: red;margin-left: .5vw">*</span></label><br>
+      <input type="password" formControlName="password" size="80"
+             [ngClass]="{'is-invalid': submitted && myForm.controls.password.errors}">
+      <div class="validate-message" *ngIf="submitted && myForm.controls.password.errors">
+        Password is required.
+      </div>
+    </div>
+    <br>
+    <div>
+      <label>Re-Password<span style="color: red;margin-left: .5vw">*</span></label><br>
+      <input type="password" formControlName="rePassword" size="80"
+             [ngClass]="{'is-invalid': submitted && myForm.controls.rePassword.errors}">
+      <div class="validate-message" *ngIf="submitted && myForm.controls.rePassword.errors">
+        Re-Password is required.
+      </div>
+    </div>
+  </div>
+  <br>
+  <div>
+    <button class="my-button">Submit</button>
+  </div>
+</form>
+</div>
